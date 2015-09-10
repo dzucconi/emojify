@@ -8,7 +8,7 @@ class Application < Sinatra::Base
 
     figlet = Figlet::Typesetter.new(Figlet::Font.new('banner.flf'))
 
-    @output = figlet[@word]
+    @output = ":off:\n" + figlet[@word]
       .gsub!(/\S/, (":#{@positive}:"))
       .gsub!(' ', (":#{@negative}:"))
 
