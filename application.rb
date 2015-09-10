@@ -17,7 +17,7 @@ class Application < Sinatra::Base
 
   post '/' do
 
-    channel = params[:channel_name]
+    channel = params[:channel_id]
     args = params[:text].split(" ")
 
     puts "CHANNEL: #{channel}"
