@@ -18,7 +18,7 @@ class Application < Sinatra::Base
   post '/' do
 
     channel = params[:channel_id]
-    args = params[:text].split(" ")
+    args = params[:text].split(" ").sub(":", "")
 
     client = Slack::Web::Client.new(token: ENV['SLACK_API_TOKEN'])
 
@@ -27,8 +27,8 @@ class Application < Sinatra::Base
     options = {
       channel: channel,
       text: output,
-      username: "Artsy",
-      icon_url: "https://www.artsy.net/images/icon-150.png"
+      username: ENV['USERNAME'],
+      icon_url: ENV['ICON']
     }
 
     client.chat_postMessage options
