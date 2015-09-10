@@ -31,6 +31,8 @@ class Application < Sinatra::Base
     }
 
     client.chat_postMessage options
+    status 200
+    body ''
   end
 
   def render_text(word, positive, negative)
