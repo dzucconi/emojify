@@ -15,7 +15,7 @@ class Application < Sinatra::Base
     erb :index
   end
 
-  post '/command' do
+  post '/' do
     client = Slack::Web::Client.new(token: ENV['SLACK_API_TOKEN'])
 
     channel = params[:channel_id]
