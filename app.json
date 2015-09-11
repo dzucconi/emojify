@@ -1,0 +1,6 @@
+{
+  "name": "Emojify for Slack",
+  "description": "Emojify your life.",
+  "respository": "https://github.com/dzucconi/emojify",
+  "keywords": ["slack", "integration", "emoji"]
+}
