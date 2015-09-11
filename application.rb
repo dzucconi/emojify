@@ -18,8 +18,9 @@ class Application < Sinatra::Base
   post '/' do
 
     channel = params[:channel_id]
-    args = params[:text].gsub(":", "").split(" ")
-
+    args = params[:text].split(' ')
+    args[1].gsub!(':', '')
+    args[2].gsub!(':', '')
     client = Slack::Web::Client.new(token: ENV['SLACK_API_TOKEN'])
 
     output = render_text args[0], args[1], args[2]
