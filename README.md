@@ -4,3 +4,7 @@
 ```
 /emojify [text] [foreground] [background]
 ```
+
+## Wat?
+
+![](screenshots/shark.gif)
