@@ -15,9 +15,9 @@
 
 [![Deploy to Heroku](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
 
-#### Incoming Webook
+#### Bot
 
-You need an API token to post emoji art back to Slack. Setup an [incoming webhook](https://slack.com/services/new/incoming-webhook) and note the API token.
+You need an API token to post emoji art back to Slack. Setup a [bot](https://slack.com/services/new/bot) and note the API token.
 
 #### Slash Command
 
@@ -34,7 +34,7 @@ You need to respond to the `/emojify` command. Setup a new [slash command](https
 
 Configure the Heroku application with `heroku config add`.
 
-* SLACK_API_TOKEN: The token from the incoming webhook.
+* SLACK_API_TOKEN: The token from the bot.
 * USERNAME: Optional name of bot.
 * ICON: Optional URL to an image to use as the icon for messages.
 
