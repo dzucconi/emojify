@@ -16,25 +16,27 @@ class Application < Sinatra::Base
   end
 
   post '/' do
-
     channel = params[:channel_id]
     args = params[:text].split(' ')
     args[1].gsub!(':', '')
     args[2].gsub!(':', '')
-    client = Slack::Web::Client.new(token: ENV['SLACK_API_TOKEN'])
 
     output = render_text args[0], args[1], args[2]
 
-    options = {
-      channel: channel,
-      text: output,
-      username: ENV['USERNAME'],
-      icon_url: ENV['ICON']
-    }
+    if (token = ENV['SLACK_API_TOKEN'])
+      client = Slack::Web::Client.new(token: token)
+      client.chat_postMessage(
+        channel: channel,
+        text: output,
+        username: ENV['USERNAME'],
+        icon_url: ENV['ICON']
+      )
+      body ''
+    else
+      body output
+    end
 
-    client.chat_postMessage options
     status 200
-    body ''
   end
 
   def render_text(word, positive, negative)
@@ -43,5 +45,12 @@ class Application < Sinatra::Base
     ":off:\n" + figlet[word]
       .gsub!(/\S/, (":#{positive}:"))
       .gsub!(' ', (":#{negative}:"))
+  end
+
+  error do
+    status 500
+    e = env['sinatra.error']
+    logger.error e
+    "#{e}\n#{e.backtrace.join("\n")}"
   end
 end
