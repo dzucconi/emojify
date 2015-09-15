@@ -1,6 +1,10 @@
 rvm:
-  - 2.2.1
-
+- 2.2.1
 language: ruby
-
 cache: bundler
+deploy:
+  provider: heroku
+  app:
+    master: artsy-emojify
+  api_key:
+    secure: c/1N02LUpIKUVzZhVK95t5VWSvdnry96z0cmLeB3k4D/zcZKJ1hGDwSz76GRDs2RQeJ/UET96Ef+Rs+CuRhPxSgoGVPJKZMnNaDW4kgZI9TTSZWMjsgD5J8Yz6eZJvd4og0zUT8zPatSFndVh90VyOYeRa9NiH2+InRn9HLcojwOR8nGD6EN6D1WBZtOKxplLg30lFsyBlbKQ1QYOMy5wt2qWqoNlXno0x2orTfM4eZuBsEbgON97I5UHq4QyJDcCqIoZqXUO4x7novJ9njYZUtUbQOIpfQCUJ//nUlKjhCsqjICGWynbpQ9RC8ghHVfu2eqi2EGIM7QsL7EkHPRH7hA1ltdHI9aCCP1bD9rEfNVfA/E3w7LvXl+6cPFvcLJPk1RkWvyud+biXcf1A00HG0l9jeCXXAKxgTOS/ZLdI/E8DXrJ97ZDBMQcn/JSDj5Th8X5Vh7jdKl2e8yJMYg45zMJeVwBi2EYJNmkF1IBN8nqKHPVpBvEx3HHhbzoSOvck6h7YT0q1y4CrHQD7OQQC/LsmjN/xtpqNc+SLNpwf/es6i71tp0VZvlcKu94eGJPBUV2+IGMipeejTWjzr2X2U3YgyTAhtk+Ar3zs4TOzO9xEQdvytJH3Se93VGbfTjVlLTsi32lOrehJlnLZAfe+ojw4TbZpRxGepPZxOtZNQ=
