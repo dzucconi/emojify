@@ -1,6 +1,7 @@
 require 'figlet'
 require 'dotenv'
 require 'slack-ruby-client'
+require 'json'
 
 Dotenv.load
 
@@ -33,7 +34,8 @@ class Application < Sinatra::Base
       )
       body ''
     else
-      body output
+      content_type :json
+      body({ text: output, username: ENV['USERNAME'] }.to_json)
     end
 
     status 200
