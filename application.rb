@@ -44,7 +44,7 @@ class Application < Sinatra::Base
   def render_text(word, positive, negative)
     figlet = Figlet::Typesetter.new(Figlet::Font.new('banner.flf'))
 
-    ":off:\n" + figlet[word]
+    figlet[word]
       .gsub!(/\S/, (":#{positive}:"))
       .gsub!(' ', (":#{negative}:"))
   end
