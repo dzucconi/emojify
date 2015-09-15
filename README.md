@@ -15,10 +15,6 @@
 
 [![Deploy to Heroku](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
 
-#### Bot
-
-You need an API token to post emoji art back to Slack. Setup a [bot](https://slack.com/services/new/bot) and note the API token.
-
 #### Slash Command
 
 You need to respond to the `/emojify` command. Setup a new [slash command](https://slack.com/services/new/slash-commands) with the following settings.
@@ -30,11 +26,13 @@ You need to respond to the `/emojify` command. Setup a new [slash command](https
 * Description: `Emojify your text`.
 * Usage hint: `[text] [foreground] [background]`
 
-#### Configure
+#### Public Emoji Art
+
+By default the emoji output is only visible to you. If you wish to post the emoji publicly, you need an API token. Setup a [bot](https://slack.com/services/new/bot) and note the API token.
 
 Configure the Heroku application with `heroku config add`.
 
-* SLACK_API_TOKEN: The token from the bot.
-* USERNAME: Optional name of bot.
-* ICON: Optional URL to an image to use as the icon for messages.
+* SLACK_API_TOKEN: The token from the bot if you want to respond publicly.
+* USERNAME: Optional name of bot for public messages.
+* ICON: Optional URL to an image to use as the icon for public messages.
 
