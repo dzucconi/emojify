@@ -1,5 +1,7 @@
 # emojify
 
+[![Build Status](https://secure.travis-ci.org/dzucconi/emojify.png)](http://travis-ci.org/dzucconi/emojify)
+
 ## Slack command
 ```
 /emojify [text] [foreground] [background]
