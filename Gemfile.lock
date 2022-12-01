@@ -21,9 +21,10 @@ GEM
       concurrent-ruby (~> 1.0)
     minitest (5.11.3)
     multipart-post (2.1.1)
-    mustermann (1.0.3)
-    rack (2.0.7)
-    rack-protection (2.0.7)
+    mustermann (2.0.2)
+      ruby2_keywords (~> 0.0.1)
+    rack (2.2.4)
+    rack-protection (2.2.3)
       rack
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
@@ -41,10 +42,11 @@ GEM
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.8.0)
     rspec-support (3.8.2)
-    sinatra (2.0.7)
-      mustermann (~> 1.0)
-      rack (~> 2.0)
-      rack-protection (= 2.0.7)
+    ruby2_keywords (0.0.5)
+    sinatra (2.2.3)
+      mustermann (~> 2.0)
+      rack (~> 2.2)
+      rack-protection (= 2.2.3)
       tilt (~> 2.0)
     slack-ruby-client (0.14.4)
       activesupport
@@ -54,7 +56,7 @@ GEM
       hashie
       websocket-driver
     thread_safe (0.3.6)
-    tilt (2.0.9)
+    tilt (2.0.11)
     tzinfo (1.2.5)
       thread_safe (~> 0.1)
     websocket-driver (0.7.1)
